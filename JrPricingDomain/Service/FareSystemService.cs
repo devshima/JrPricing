@@ -19,7 +19,8 @@ namespace JrPricingDomain.Service
                                               Destination destination,  
                                               string superExpressName, 
                                               string seatName, 
-                                              string fareName)
+                                              string fareName,
+                                              string tripName)
         {
             FareByRoute fareByRoute = _faresRepository.GetFareByRoute(departure, destination);
 
@@ -29,10 +30,16 @@ namespace JrPricingDomain.Service
             SuperExpressSurchargeType superExpressType = new SuperExpressSurchargeType(seat, fareByRoute.nozomiAdditionalCharge);
             SuperExpressSurcharge superExpressSurcharge = superExpressType.valueOf(superExpressName);
 
-            FareType fareType = new FareType(fareByRoute.basicFare, superExpressSurcharge);
+            BasicFareType basicFareType = new BasicFareType(fareByRoute.basicFare, fareByRoute.railWayDistance);
+            BasicFareWithTripType basicFareWithTripType = basicFareType.valueOf(tripName);
+
+            FareType fareType = new FareType(basicFareWithTripType, superExpressSurcharge);
             Fare fare = fareType.valueOf(fareName);
 
-            return fare.value();
+            TripType tripType = new TripType(fare);
+            Trip trip = tripType.valueOf(tripName);
+
+            return trip.value();
         }
     }
 }

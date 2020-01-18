@@ -11,12 +11,14 @@ namespace JrPricingDomain.Model
         public readonly BasicFare basicFare;
         public readonly HikariCharge hikariCharge;
         public readonly NozomiAdditionalCharge nozomiAdditionalCharge;
+        public readonly RailWayDistance railWayDistance;
 
         public FareByRoute(Departure departure,
                                         Destination destination,
                                         BasicFare basicFare,
                                         HikariCharge hikariCharge,
-                                        NozomiAdditionalCharge nozomiAdditionalCharge)
+                                        NozomiAdditionalCharge nozomiAdditionalCharge,
+                                        RailWayDistance railWayDistance)
 
         {
             this.departure = departure;
@@ -24,6 +26,7 @@ namespace JrPricingDomain.Model
             this.basicFare = basicFare;
             this.hikariCharge = hikariCharge;
             this.nozomiAdditionalCharge = nozomiAdditionalCharge;
+            this.railWayDistance = railWayDistance;
         }
 
     }

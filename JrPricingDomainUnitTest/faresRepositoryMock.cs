@@ -19,12 +19,14 @@ namespace JrPricingDomainUnitTest
                                                   new Destination("ShinOsaka"),
                                                   new BasicFare(8910),
                                                   new HikariCharge(5490),
-                                                  new NozomiAdditionalCharge(320)),
+                                                  new NozomiAdditionalCharge(320),
+                                                  new RailWayDistance(533)),
                     new FareByRoute(new Departure("Tokyo"),
                                                   new Destination("Himeji"),
                                                   new BasicFare(10010),
                                                   new HikariCharge(5920),
-                                                  new NozomiAdditionalCharge(530))
+                                                  new NozomiAdditionalCharge(530),
+                                                  new RailWayDistance(644))
                 };
 
             thisMock.Setup(m => m.GetFareByRoute(It.IsAny<Departure>(), It.IsAny<Destination>()))

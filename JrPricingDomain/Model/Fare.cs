@@ -6,7 +6,7 @@ namespace JrPricingDomain.Model
 {
     public  interface Fare
     {
-        public BasicFare basicFare { get; }
+        public BasicFareWithTripType basicFare { get; }
         public SuperExpressSurcharge superExpressSurcharge { get; }
 
         int value();

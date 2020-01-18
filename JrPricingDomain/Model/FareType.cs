@@ -6,23 +6,23 @@ namespace JrPricingDomain.Model
 {
     public class FareType
     {
-        private readonly BasicFare basicFare;
+        private readonly BasicFareWithTripType basicFareType;
         private readonly SuperExpressSurcharge superExpressSurcharge;
 
-        public FareType(BasicFare basicFare, SuperExpressSurcharge superExpressSurcharge)
+        public FareType(BasicFareWithTripType basicFare, SuperExpressSurcharge superExpressSurcharge)
         {
-            this.basicFare = basicFare;
+            this.basicFareType = basicFare;
             this.superExpressSurcharge = superExpressSurcharge;
         }
 
         public AdultFare Adult()
         {
-            return new AdultFare(basicFare, superExpressSurcharge);
+            return new AdultFare(basicFareType, superExpressSurcharge);
         }
 
         public ChildFare Child()
         {
-            return new ChildFare(basicFare, superExpressSurcharge);
+            return new ChildFare(basicFareType, superExpressSurcharge);
         }
 
         public Fare valueOf(string name)

@@ -6,11 +6,11 @@ namespace JrPricingDomain.Model
 {
     public class AdultFare : Fare
     {
-        public BasicFare basicFare { get; }
+        public BasicFareWithTripType basicFare { get; }
 
         public SuperExpressSurcharge superExpressSurcharge { get; }
 
-        public AdultFare(BasicFare basicFare, SuperExpressSurcharge superExpressSurcharge)
+        public AdultFare(BasicFareWithTripType basicFare, SuperExpressSurcharge superExpressSurcharge)
         {
             this.basicFare = basicFare;
             this.superExpressSurcharge = superExpressSurcharge;
