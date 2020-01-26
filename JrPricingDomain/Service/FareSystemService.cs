@@ -41,16 +41,8 @@ namespace JrPricingDomain.Service
             TripType tripType = new TripType(fare);
             Trip trip = tripType.valueOf(tripName);
 
-            NumberOfPeople numberOfPeople = new NumberOfPeople(numberOfPeopleValue);
-
-            GroupType groupType = GroupType.valueOf(numberOfPeople);
-            NumberOfPeople discountApplicableNumber = groupType.groupDiscountApplicableNumber();
-
-            GroupDiscountType groupDiscount = GroupDiscountType.valueOf(trip, new BoardingDate(boardingDate), numberOfPeople);
-
-            var discountedFare = trip.value() - groupDiscount.value();
-            var amout = (discountedFare * numberOfPeople.value) - (discountedFare * discountApplicableNumber.value);
-            return amout;
+            Ticket ticket = new Ticket(trip, new BoardingDate(boardingDate), new NumberOfPeople(numberOfPeopleValue));
+            return ticket.Amount();
         }
     }
 }

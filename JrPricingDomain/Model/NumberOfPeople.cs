@@ -13,6 +13,11 @@ namespace JrPricingDomain.Model
             this.value = value;
         }
 
+        public bool isGroupDiscountNotApplicable()
+        {
+            return this.value < 8;
+        }
+
         public bool isGroupDiscountApplicable()
         {
             return this.value >= 8;

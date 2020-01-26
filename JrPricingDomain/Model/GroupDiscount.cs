@@ -4,7 +4,7 @@ using System.Text;
 
 namespace JrPricingDomain.Model
 {
-    public class GroupDiscount : GroupDiscountType
+    public class GroupDiscount
     {
         private readonly Trip trip;
         private readonly BoardingDate boardingDate;
