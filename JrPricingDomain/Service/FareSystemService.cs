@@ -16,11 +16,13 @@ namespace JrPricingDomain.Service
         }
 
         public int calculateFare(Departure departure, 
-                                              Destination destination,  
-                                              string superExpressName, 
-                                              string seatName, 
-                                              string fareName,
-                                              string tripName)
+                                         Destination destination,  
+                                         string superExpressName, 
+                                         string seatName, 
+                                         string fareName,
+                                         string tripName, 
+                                         DateTime boardingDate,
+                                         int numberOfPeopleValue)
         {
             FareByRoute fareByRoute = _faresRepository.GetFareByRoute(departure, destination);
 
@@ -39,7 +41,16 @@ namespace JrPricingDomain.Service
             TripType tripType = new TripType(fare);
             Trip trip = tripType.valueOf(tripName);
 
-            return trip.value();
+            NumberOfPeople numberOfPeople = new NumberOfPeople(numberOfPeopleValue);
+
+            GroupType groupType = GroupType.valueOf(numberOfPeople);
+            NumberOfPeople discountApplicableNumber = groupType.groupDiscountApplicableNumber();
+
+            GroupDiscountType groupDiscount = GroupDiscountType.valueOf(trip, new BoardingDate(boardingDate), numberOfPeople);
+
+            var discountedFare = trip.value() - groupDiscount.value();
+            var amout = (discountedFare * numberOfPeople.value) - (discountedFare * discountApplicableNumber.value);
+            return amout;
         }
     }
 }
