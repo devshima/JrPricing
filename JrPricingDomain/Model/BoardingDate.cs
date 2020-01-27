@@ -13,7 +13,7 @@ namespace JrPricingDomain.Model
             this.value = value;
         }
 
-        public bool isGroupDiscountApplicable()
+        public bool duringNewYearHolidaysPeriod()
         {
             return NewYearHolidaysPeriod.during(this);
         }

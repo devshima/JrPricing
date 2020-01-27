@@ -18,7 +18,7 @@ namespace JrPricingDomain.Model
 
         public int value()
         {
-            GroupDiscountRate groupDiscountRate = boardingDate.isGroupDiscountApplicable() ? new GroupDiscountRate(0.1) : new GroupDiscountRate(0.15);
+            GroupDiscountRate groupDiscountRate = boardingDate.duringNewYearHolidaysPeriod() ? new GroupDiscountRate(0.1) : new GroupDiscountRate(0.15);
             var discounted = (int)Math.Floor((this.trip.value() * groupDiscountRate.value) * roundDownNumber) * 10;
             return discounted;
         }
