@@ -15,7 +15,7 @@ namespace JrPricingDomain.Model
 
         public bool isGroupDiscountApplicable()
         {
-            return GroupDiscountApplicableTerm.isGroupDiscountApplicableDay(this);
+            return NewYearHolidaysPeriod.during(this);
         }
 
     }
