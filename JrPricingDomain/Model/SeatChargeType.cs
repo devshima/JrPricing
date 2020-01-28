@@ -8,16 +8,18 @@ namespace JrPricingDomain.Model
     {
         private readonly HikariCharge hikariCharge;
         private readonly FreeSeatDiscount freeSeatDiscount;
+        private readonly Season season;
 
-        public SeatChargeType(HikariCharge hikariCharge, FreeSeatDiscount freeSeatDiscount)
+        public SeatChargeType(HikariCharge hikariCharge, FreeSeatDiscount freeSeatDiscount, Season season)
         {
             this.hikariCharge = hikariCharge;
             this.freeSeatDiscount = freeSeatDiscount;
+            this.season = season;
         }
 
         public ReservedSeatCharge Reserved()
         {
-            return new ReservedSeatCharge(hikariCharge);
+            return new ReservedSeatCharge(hikariCharge, season);
         }
 
         public FreeSeatCharge Free()

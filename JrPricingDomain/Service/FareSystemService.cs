@@ -26,7 +26,9 @@ namespace JrPricingDomain.Service
         {
             FareByRoute fareByRoute = _faresRepository.GetFareByRoute(departure, destination);
 
-            SeatChargeType seatType = new SeatChargeType(fareByRoute.hikariCharge, new FreeSeatDiscount(530));
+            Season season = SeasonType.valueOf(new BoardingDate(boardingDate));
+            
+            SeatChargeType seatType = new SeatChargeType(fareByRoute.hikariCharge, new FreeSeatDiscount(530), season);
             SeatCharge seat = seatType.valueOf(seatName);
 
             SuperExpressSurchargeType superExpressType = new SuperExpressSurchargeType(seat, fareByRoute.nozomiAdditionalCharge);

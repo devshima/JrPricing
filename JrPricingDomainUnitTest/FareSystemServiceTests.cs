@@ -95,7 +95,8 @@ namespace JrPricingDomainUnitTest
                                                         "Oneway",
                                                         new System.DateTime(2020, 1, 1),
                                                         31);
-            var oneAmount = fareOfFromTokyoToShinOsakaAdultHikariOneway - discount(fareOfFromTokyoToShinOsakaAdultHikariOneway, 0.10);
+            var seasonAmount = fareOfFromTokyoToShinOsakaAdultHikariOneway + 200;
+            var oneAmount = seasonAmount - discount(seasonAmount, 0.10);
             var expected = (oneAmount * 31) - oneAmount;
             Assert.AreEqual(expected, actual);
         }
@@ -113,7 +114,8 @@ namespace JrPricingDomainUnitTest
                                                         "Oneway",
                                                         new System.DateTime(2020, 1, 1),
                                                         155);
-            var oneAmount = fareOfFromTokyoToShinOsakaAdultHikariOneway - discount(fareOfFromTokyoToShinOsakaAdultHikariOneway, 0.10);
+            var seasonAmount = fareOfFromTokyoToShinOsakaAdultHikariOneway + 200;
+            var oneAmount = seasonAmount - discount(seasonAmount, 0.10);
             var expected = (oneAmount * 155) - (oneAmount * 3);
             Assert.AreEqual(expected, actual);
         }
