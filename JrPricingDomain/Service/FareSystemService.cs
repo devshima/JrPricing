@@ -6,7 +6,7 @@ using JrPricingDomain.Repository;
 
 namespace JrPricingDomain.Service
 {
-    public class FareSystemService
+    public class FareSystemService : IFareSystemService
     {
         private readonly IFaresRepository _faresRepository;
 

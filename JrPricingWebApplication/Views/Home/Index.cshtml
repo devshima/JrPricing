@@ -1,8 +1,67 @@
-﻿@{
+﻿@model JrPricingWebApplication.Models.PricingParameter
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<h1>新幹線　料金計算</h1>
+
+<div class="row">
+    <diiv class="col-md-4">
+        <form asp-action="Calculate">
+            <div class="form-group">
+                <label asp-for="departure" />
+                <select asp-for="departure" class="form-control">
+                    <option selected value="Tokyo">東京</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="destination" class="control-label" />
+                <select asp-for="destination" class="form-control">
+                    <option selected value="ShinOsaka">新大阪</option>
+                    <option value="Himeji">姫路</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="superExpressName" class="control-label" />
+                <select asp-for="superExpressName" class="form-control">
+                    <option selected value="Hikari">ひかり</option>
+                    <option value="Nozomi">のぞみ</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="fareName" class="control-label" />
+                <select asp-for="fareName" class="form-control">
+                    <option selected value="Adult">大人</option>
+                    <option value="Child">子ども</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="seatName" class="control-label" />
+                <select asp-for="seatName" class="form-control">
+                    <option selected value="Reserved">指定</option>
+                    <option value="Free">自由</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="tripName" class="control-label" />
+                <select asp-for="tripName" class="form-control">
+                    <option selected value="Oneway">片道</option>
+                    <option value="RoundTrip">往復</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="boardingDate" class="control-label" />
+                <Input asp-for="boardingDate" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="numberOfPeopleValue" class="control-label" />
+                <Input asp-for="numberOfPeopleValue" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="計算する" class="btn-primary" />
+            </div>
+        </form>
+    </diiv>
+
 </div>

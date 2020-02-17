@@ -9,6 +9,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using JrPricingDomain.Service;
+using JrPricingDomain.Repository;
+using JrPricingInfrastructure.Repository;
+
 namespace JrPricingWebApplication
 {
     public class Startup
@@ -24,6 +28,9 @@ namespace JrPricingWebApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddScoped<IFareSystemService, FareSystemService>();
+            services.AddScoped<IFaresRepository, FaresRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
