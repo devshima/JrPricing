@@ -28,7 +28,7 @@ namespace JrPricingWebApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
+            services.AddMvc().AddRazorRuntimeCompilation();
             services.AddScoped<IFareSystemService, FareSystemService>();
             services.AddScoped<IFaresRepository, FaresRepository>();
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,6 +25,6 @@ namespace JrPricingWebApplication.Models
         [Display(Name = "乗車日")]
         public DateTime boardingDate { get; set; }
         [Display(Name = "旅行人数")]
-        public int numberOfPeopleValue { get; set; }
+        public int numberOfPeopleValue { get; set; };
     }
 }
