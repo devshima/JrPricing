@@ -6,6 +6,8 @@ namespace JrPricingDomain.Model
 {
     public class OrdinaryGroup : GroupType
     {
+        public string label => "通常";
+
         public NumberOfPeople groupDiscountApplicableNumber()
         {
             return new NumberOfPeople(1);

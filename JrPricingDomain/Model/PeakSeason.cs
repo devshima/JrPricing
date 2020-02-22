@@ -8,6 +8,9 @@ namespace JrPricingDomain.Model
     {
         public readonly ReservedSeatSeasonVariable reservedSeatSeasonVariable = 
             new ReservedSeatSeasonVariable(200);
+
+        public string label =>"繁忙期";
+
         public int variableAmount()
         {
             return reservedSeatSeasonVariable.value;

@@ -11,6 +11,9 @@ namespace JrPricingDomain.Model
         {
             this.numberOfPeople = numberOfPeople;
         }
+
+        public string label => "大規模";
+
         public NumberOfPeople groupDiscountApplicableNumber()
         {
             return new NumberOfPeople(this.numberOfPeople.value / 50);

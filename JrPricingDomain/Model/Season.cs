@@ -7,5 +7,6 @@ namespace JrPricingDomain.Model
     public interface Season
     {
         int variableAmount();
+        string label { get; }
     }
 }

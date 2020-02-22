@@ -20,5 +20,7 @@ namespace JrPricingDomain.Model
         {
             return  basicFare.value + superExpressSurcharge.value;
         }
+
+        public string label => "大人";
     }
 }

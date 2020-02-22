@@ -6,7 +6,9 @@ namespace JrPricingDomain.Model
 {
     public class ReqularSeason : Season
     {
-         public int variableAmount()
+        public string label => "通常期";
+
+        public int variableAmount()
         {
             return 0;
         }

@@ -25,15 +25,30 @@ namespace JrPricingDomain.Model
             return groupDiscountedAmount();
         }
 
+        public GroupDiscount groupDiscount()
+        {
+            return new GroupDiscount(trip, boardingDate);
+        }
+
+        public GroupType groupType()
+        {
+           return GroupType.valueOf(numberOfPeople);
+        }
+
+        public NumberOfPeople discountApplicableNumber()
+        {
+            return this.groupType().groupDiscountApplicableNumber();
+        }
+
+        public int groupDiscountedFare()
+        {
+            return this.trip.value() - this.groupDiscount().value();
+        }　
+
         private int groupDiscountedAmount()
         {
-            GroupDiscount groupDiscount = new GroupDiscount(trip, boardingDate);
-
-            GroupType groupType = GroupType.valueOf(numberOfPeople);
-            NumberOfPeople discountApplicableNumber = groupType.groupDiscountApplicableNumber();
-
-            var discountedFare = trip.value() - groupDiscount.value();
-            return (discountedFare * numberOfPeople.value) - (discountedFare * discountApplicableNumber.value);
+            var discountedFare = this.groupDiscountedFare();
+            return (discountedFare * numberOfPeople.value) - (discountedFare * this.discountApplicableNumber().value);
         }
 
     }

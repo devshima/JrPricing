@@ -28,5 +28,6 @@ namespace JrPricingDomain.Model
             return (int)Math.Floor((value * discountRate) * roundDownNumber) * 10;
         }
 
+        public string label => "子供";
     }
 }

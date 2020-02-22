@@ -16,5 +16,8 @@ namespace JrPricingDomain.Model
 
         public int value => seatCharge.value + nozomiAdditionalCharge.value;
 
+        public string label =>"のぞみ";
+
+        public SeatCharge getSeatCharge => this.seatCharge;
     }
 }

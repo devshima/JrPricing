@@ -17,5 +17,6 @@ namespace JrPricingDomain.Model
 
         public int value => hikariCharge.value + season.variableAmount();
 
+        public string label => "指定席";
     }
 }

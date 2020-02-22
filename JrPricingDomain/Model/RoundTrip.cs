@@ -15,7 +15,15 @@ namespace JrPricingDomain.Model
             this.returningFare = fare;
         }
 
+        public string label => "往復";
+
         public int value() => this.departingFare.value() + this.returningFare.value();
+
+        public SuperExpressSurcharge GetSuperExpressSurcharge()
+        {
+            return this.departingFare.superExpressSurcharge;
+        }
+
 
     }
 }

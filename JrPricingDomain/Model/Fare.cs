@@ -10,5 +10,7 @@ namespace JrPricingDomain.Model
         public SuperExpressSurcharge superExpressSurcharge { get; }
 
         int value();
+
+        string label { get; }
     }
 }

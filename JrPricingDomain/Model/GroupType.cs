@@ -7,6 +7,7 @@ namespace JrPricingDomain.Model
     public interface GroupType
     {
         NumberOfPeople groupDiscountApplicableNumber();
+        string label { get; }
         public static GroupType valueOf(NumberOfPeople numberOfPeople)
         {
             if (numberOfPeople.isLargeScaleGroup()) { return new LargeScaleGroup(numberOfPeople); };

@@ -8,6 +8,10 @@ namespace JrPricingDomain.Model
     {
         public int value => seatCharge.value;
 
+        public string label => "ひかり";
+
+        public SeatCharge getSeatCharge => this.seatCharge;
+
         private readonly SeatCharge seatCharge;
         public Hikari(SeatCharge seat)
         {

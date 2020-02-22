@@ -7,5 +7,6 @@ namespace JrPricingDomain.Model
     public interface SeatCharge
     {
         public int value { get; }
+        public string label { get; }
     }
 }

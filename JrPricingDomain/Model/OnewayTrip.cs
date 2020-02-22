@@ -13,6 +13,8 @@ namespace JrPricingDomain.Model
             this.fare = fare;
         }
 
+        public string label =>"片道";
+
         public int value() => fare.value();
     }
 }

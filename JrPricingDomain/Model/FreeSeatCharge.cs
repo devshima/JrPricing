@@ -16,5 +16,6 @@ namespace JrPricingDomain.Model
 
         public int value => this.hikariCharge.value - freeSeatDiscount.value;
 
+        public string label => "自由席";
     }
 }
