@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace JrPricingWebApplication.Models
 {
-    public class PricingParameter
+    public class FarePostRequestModel
     {
         [Display(Name ="出発")]
         public string departure { get; set; }

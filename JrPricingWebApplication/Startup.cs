@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-using JrPricingDomain.Service;
+using JrPricingApplication;
 using JrPricingDomain.Repository;
 using JrPricingInfrastructure.Repository;
 
@@ -29,7 +29,7 @@ namespace JrPricingWebApplication
         {
             services.AddControllersWithViews();
             services.AddMvc().AddRazorRuntimeCompilation();
-            services.AddScoped<IFareSystemService, FareSystemService>();
+            services.AddTransient<FareApplicationService>();
             services.AddScoped<IFaresRepository, FaresRepository>();
         }
 

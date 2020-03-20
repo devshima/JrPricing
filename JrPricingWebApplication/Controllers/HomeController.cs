@@ -5,21 +5,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using JrPricingApplication;
 using JrPricingWebApplication.Models;
-using JrPricingDomain.Service;
 
 namespace JrPricingWebApplication.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly FareApplicationService _fareApplicationService;
 
-        private readonly IFareSystemService _fareSystemService;
-
-        public HomeController(ILogger<HomeController> logger, IFareSystemService fareSystemService)
+        public HomeController(ILogger<HomeController> logger, FareApplicationService fareApplicationService)
         {
             _logger = logger;
-            _fareSystemService = fareSystemService;
+            _fareApplicationService = fareApplicationService;
         }
 
         public IActionResult Index()
@@ -40,19 +39,21 @@ namespace JrPricingWebApplication.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Calculate(PricingParameter param)
+        public IActionResult Calculate(FarePostRequestModel request)
         {
-            var result = _fareSystemService.calculateFare(
-                    new JrPricingDomain.Model.Departure(param.departure),
-                    new JrPricingDomain.Model.Destination(param.destination),
-                    param.superExpressName,
-                    param.seatName,
-                    param.fareName,
-                    param.tripName,
-                    param.boardingDate,
-                    param.numberOfPeopleValue
+            var command = new FareCalculateCommand(
+                request.departure,
+                request.destination,
+                request.superExpressName,
+                request.seatName,
+                request.fareName,
+                request.tripName,
+                request.boardingDate,
+                request.numberOfPeopleValue
                 );
-            TempData["result"] = result;
+
+            var result = _fareApplicationService.calculate(command);
+            TempData["result"] = result.amount();
             return RedirectToAction("Result");
         }
 

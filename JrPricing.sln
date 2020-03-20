@@ -10,11 +10,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JrPricingDomain", "JrPricingDomain\JrPricingDomain.csproj", "{ACD80084-992F-4168-90C3-D587F7749845}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JrPricingDomainUnitTest", "JrPricingDomainUnitTest\JrPricingDomainUnitTest.csproj", "{9EA42A79-1E75-41E9-AE25-8D67AA7B9211}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JrPricingWebApplication", "JrPricingWebApplication\JrPricingWebApplication.csproj", "{1C056A0E-6C01-4CE8-9C70-C6DF1A0F25BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JrPricingWebApplication", "JrPricingWebApplication\JrPricingWebApplication.csproj", "{1C056A0E-6C01-4CE8-9C70-C6DF1A0F25BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JrPricingInfrastructure", "JrPricingInfrastructure\JrPricingInfrastructure.csproj", "{D32EA47E-91A1-418B-BD65-51130FBDB973}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JrPricingInfrastructure", "JrPricingInfrastructure\JrPricingInfrastructure.csproj", "{D32EA47E-91A1-418B-BD65-51130FBDB973}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JrPricingApplication", "JrPricingApplication\JrPricingApplication.csproj", "{F58B0EBC-CAE5-41EF-8790-DEDE9598F727}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JrPricingApplicationServiceTests", "JrPricingApplicationServiceTests\JrPricingApplicationServiceTests.csproj", "{68C832F3-1801-4E68-B23D-77D79A647743}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,10 +28,6 @@ Global
 		{ACD80084-992F-4168-90C3-D587F7749845}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACD80084-992F-4168-90C3-D587F7749845}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACD80084-992F-4168-90C3-D587F7749845}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9EA42A79-1E75-41E9-AE25-8D67AA7B9211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9EA42A79-1E75-41E9-AE25-8D67AA7B9211}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9EA42A79-1E75-41E9-AE25-8D67AA7B9211}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9EA42A79-1E75-41E9-AE25-8D67AA7B9211}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1C056A0E-6C01-4CE8-9C70-C6DF1A0F25BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1C056A0E-6C01-4CE8-9C70-C6DF1A0F25BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C056A0E-6C01-4CE8-9C70-C6DF1A0F25BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -38,6 +36,14 @@ Global
 		{D32EA47E-91A1-418B-BD65-51130FBDB973}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D32EA47E-91A1-418B-BD65-51130FBDB973}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D32EA47E-91A1-418B-BD65-51130FBDB973}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F58B0EBC-CAE5-41EF-8790-DEDE9598F727}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F58B0EBC-CAE5-41EF-8790-DEDE9598F727}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F58B0EBC-CAE5-41EF-8790-DEDE9598F727}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F58B0EBC-CAE5-41EF-8790-DEDE9598F727}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68C832F3-1801-4E68-B23D-77D79A647743}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68C832F3-1801-4E68-B23D-77D79A647743}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68C832F3-1801-4E68-B23D-77D79A647743}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68C832F3-1801-4E68-B23D-77D79A647743}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
