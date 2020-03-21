@@ -14,9 +14,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JrPricingWebApplication", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JrPricingInfrastructure", "JrPricingInfrastructure\JrPricingInfrastructure.csproj", "{D32EA47E-91A1-418B-BD65-51130FBDB973}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JrPricingApplication", "JrPricingApplication\JrPricingApplication.csproj", "{F58B0EBC-CAE5-41EF-8790-DEDE9598F727}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JrPricingApplication", "JrPricingApplication\JrPricingApplication.csproj", "{F58B0EBC-CAE5-41EF-8790-DEDE9598F727}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JrPricingApplicationServiceTests", "JrPricingApplicationServiceTests\JrPricingApplicationServiceTests.csproj", "{68C832F3-1801-4E68-B23D-77D79A647743}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JrPricingApplicationTests", "JrPricingApplicationTests\JrPricingApplicationTests.csproj", "{68C832F3-1801-4E68-B23D-77D79A647743}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
